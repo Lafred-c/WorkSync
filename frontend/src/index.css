@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Tailwind v4 theme tokens */
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ✅ THIS is how you apply it globally */
+body {
+  @apply font-sans bg-gray-50 text-gray-900 dark:bg-black dark:text-white;
+}
+
+/* Gradient utilities */
+.gradient-text {
+  @apply bg-linear-to-br from-indigo-600 to-purple-600 bg-clip-text text-transparent;
+}
+
+.gradient-bg {
+  @apply bg-linear-to-br from-indigo-700 to-purple-700;
+}
+.gradient-border {
+  @apply border-4 border-transparent bg-linear-to-br from-indigo-500 to-purple-500 bg-clip-border;
+}
+.gradient-shadow {
+  @apply shadow-lg;
+  background: linear-gradient(to bottom right, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active {
+  @apply bg-black text-white rounded-lg;
+}
